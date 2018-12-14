@@ -1,0 +1,21 @@
+/* for selector */
+.margin {
+  $margin: 4px;
+  @for $i from 1 to 12 {
+   &#{&}_margin_#{$i}xunit { margin: $margin * $i; }
+   &#{&}_top_#{$i}xunit { margin-top: $margin * $i; }
+   &#{&}_bottom_#{$i}xunit { margin-bottom: $margin * $i; }
+   &#{&}_left_#{$i}xunit { margin-left: $margin * $i; }
+   &#{&}_right_#{$i}xunit { margin-right: $margin * $i; }
+  }
+}
+/* end */
+
+/* for class */
+$MARGIN_DEFAULT: 4px;
+$MARGIN_1XUNIT: $MARGIN_DEFAULT * 1;
+$MARGIN_2XUNIT: $MARGIN_DEFAULT * 2;
+$MARGIN_3XUNIT: $MARGIN_DEFAULT * 3;
+$MARGIN_4XUNIT: $MARGIN_DEFAULT * 4;
+$MARGIN_5XUNIT: $MARGIN_DEFAULT * 5;
+/* end */
