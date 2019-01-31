@@ -20,7 +20,7 @@ const sassLint = require('gulp-sass-lint');
 const argv = require('minimist')(process.argv.slice(2));
 
 const SRC = './src';
-const DEST = './dest';
+const DEST = './public';
 const CONFIG = './src/config';
 
 if (argv.mode === 'development') {
@@ -29,7 +29,6 @@ if (argv.mode === 'development') {
   webpackConfig.mode = 'production'
 }
 
-// eslint-disable-next-line strict
 gulp.task('doc', function () {
   return gulp.src('./src/**/*.{js,vue}')
     .pipe(documentation('html', {}, {
@@ -39,7 +38,6 @@ gulp.task('doc', function () {
     .pipe(gulp.dest('docs'));
 });
 
-// eslint-disable-next-line strict
 gulp.task('pug', () => {
   return gulp.src(`${SRC}/html/**/[!_]*.pug`)
     .pipe(pug({
@@ -50,21 +48,17 @@ gulp.task('pug', () => {
     .pipe(gulp.dest(`${DEST}`));
 });
 
-// eslint-disable-next-line strict
 gulp.task('image', function () {
   return gulp.src(`${SRC}/images/**/*`)
     .pipe(gulp.dest(`${DEST}/assets/images`))
 });
 
-// eslint-disable-next-line strict
 gulp.task('javascript', function () {
   return webpackStream(webpackConfig, webpack)
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(gulp.dest(`${DEST}/assets/`));
 });
 
-
-// eslint-disable-next-line strict
 gulp.task('sass', () => {
   const config = readConfig(`${CONFIG}/pleeease.json`);
   const pipe = gulp.src(`${SRC}/stylesheets/application.scss`)
@@ -77,7 +71,6 @@ gulp.task('sass', () => {
   return pipe.pipe(gulp.dest(`${DEST}/assets/`));
 });
 
-// eslint-disable-next-line strict
 gulp.task('browser-sync', function () {
   browserSync({
     server: {
@@ -91,7 +84,6 @@ gulp.task('browser-sync', function () {
   gulp.watch('src/images/**/*', ['image', 'reload']);
 });
 
-// eslint-disable-next-line strict
 gulp.task('reload', function () {
   browserSync.reload();
 });

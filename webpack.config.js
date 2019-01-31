@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // base config
 const SRC = './src'
-const DEST = './dist'
+const DEST = './public'
 
 module.exports = {
   entry: {
