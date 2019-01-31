@@ -1,7 +1,6 @@
 # gulp-starter-kit
 
 1. first step
-
 `yarn` or `npm install`
 
 2. develop
