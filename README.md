@@ -1,10 +1,11 @@
 # gulp-starter-kit
 
-1 - first
-`yarn`
+1. first step
 
-2 - develop
-`yarn start`
+`yarn` or `npm install`
 
-3 - build
-`yarn build`
+2. develop
+`yarn start` or `npm start`
+
+3. build
+`yarn build` or `npm build`
