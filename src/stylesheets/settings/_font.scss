@@ -1,0 +1,13 @@
+/* font */
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+/* font */
+$FONT_WEIGHT_BOLD: 700;
+body, .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, h1, h2, h3, h4, h5, h6 {
+  font-family: YakuHanJP, 游ゴシック, YuGothic,"Noto Sans Japanese", 'Noto Sans JP', "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", 游ゴシック, YuGothic, メイリオ, Meiryo, Verdana, sans-serif !important;
+  font-display: swap;
+  font-feature-settings : "palt";
+  letter-spacing: 1px;
+}
+
+/* end */
